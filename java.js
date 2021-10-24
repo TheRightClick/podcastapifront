@@ -38,7 +38,7 @@ document.getElementById("deleteButton").onclick = function() {
 
 
 function podcastSearch() {
-    document.write();
+    
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     let term = document.getElementById("podcastInput").value
@@ -221,7 +221,7 @@ function showAll() {
 
 function populateAll(data) {
     console.log(data)
-    
+    data.reverse()
     allPodcasts = data
 
     if (allPodcasts.length === 0) {
