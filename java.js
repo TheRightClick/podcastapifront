@@ -44,7 +44,7 @@ function podcastSearch() {
         };    
 
         
-fetch("https://git.heroku.com/podcastingnode.git/podcasts", requestOptions)
+fetch("https://podcastingnode.herokuapp.com/podcasts", requestOptions)
 //converts text response to json
 .then(response => response.json())
 //sends data to a function
@@ -158,7 +158,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://git.heroku.com/podcastingnode.git/podcasts/save", requestOptions)
+fetch("https://podcastingnode.herokuapp.com/podcasts/save", requestOptions)
   .then(response =>  response.text())
   .then(result => console.log(result))    
   .catch(error => console.log('error', error));
@@ -197,7 +197,7 @@ function showAll() {
         redirect: 'follow'
       };
       
-      fetch("https://git.heroku.com/podcastingnode.git/showall", requestOptions)
+      fetch("https://podcastingnode.herokuapp.com/showall", requestOptions)
         .then(response => response.json())
         .then(result => populateAll(result))
         .catch(error => console.log('error', error));
@@ -290,7 +290,7 @@ let mongoId = document.getElementById("modal_mongoId").textContent
 
 console.log(mongoId)
 
-console.log(`https://git.heroku.com/podcastingnode.git/podcasts/${mongoId}`)
+console.log(`https://podcastingnode.herokuapp.com/podcasts/${mongoId}`)
 
 let newComment = document.getElementById("commentBox").value
 
@@ -312,7 +312,7 @@ let requestOptions = {
 
 
 
-fetch(`https://git.heroku.com/podcastingnode.git/podcasts/${mongoId}`, requestOptions)
+fetch(`https://podcastingnode.herokuapp.com/podcasts/${mongoId}`, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -336,10 +336,10 @@ function deletePodcast() {
 
 // let mongoIdIso = mongoId.dataset.mongoid
 
-console.log(`https://git.heroku.com/podcastingnode.git/podcasts/${mongoId}`)
+console.log(`https://podcastingnode.herokuapp.com/podcasts/${mongoId}`)
 
 
-let urlDelete= `https://git.heroku.com/podcastingnode.git/podcasts/${mongoId}`
+let urlDelete= `https://podcastingnode.herokuapp.com/podcasts/${mongoId}`
 console.log(urlDelete)
 
 let requestOptions = {
