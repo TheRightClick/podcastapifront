@@ -197,7 +197,7 @@ function showAll() {
         redirect: 'follow'
       };
       
-      fetch("https://podcastingnode.herokuapp.com/showall", requestOptions)
+      fetch("https://podcastingnode.herokuapp.com/podcasts/showall", requestOptions)
         .then(response => response.json())
         .then(result => populateAll(result))
         .catch(error => console.log('error', error));
@@ -206,7 +206,7 @@ function showAll() {
 
 function populateAll(data) {
     console.log(data)
-    allPodcasts = data.reverse()
+    allPodcasts = data
     
     if (allPodcasts.length === 0) {
         alert("No Results Found")
